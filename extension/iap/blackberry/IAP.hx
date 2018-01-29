@@ -3,10 +3,10 @@ package extension.iap.blackberry;
 import cpp.vm.Thread;
 import extension.iap.IAP;
 import extension.iap.IAPEvent;
-import flash.errors.Error;
-import flash.events.Event;
-import flash.events.EventDispatcher;
-import flash.Lib;
+import openfl.errors.Error;
+import openfl.events.Event;
+import openfl.events.EventDispatcher;
+import openfl.Lib;
 import haxe.Json;
 import haxe.Timer;
 
