@@ -2,7 +2,7 @@ package extension.iap;
 
 import extension.iap.IAP;
 
-import openfl.events.Event;
+import flash.events.Event;
 
 
 class IAPEvent extends Event {

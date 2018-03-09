@@ -5,7 +5,7 @@ import flash.geom.Matrix;
 import flash.system.Capabilities;
 import flash.text.TextField;
 import flash.text.TextFormat;
-import openfl.Assets;
+import flash.Assets;
 import flash.display.BitmapData;
 
 class ScreenUtils

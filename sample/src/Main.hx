@@ -9,7 +9,7 @@ import flash.events.MouseEvent;
 import flash.Lib;
 import model.GameModel;
 import model.GameUserData;
-import openfl.Assets;
+import flash.Assets;
 import states.GameState;
 import states.State;
 import states.TitleState;

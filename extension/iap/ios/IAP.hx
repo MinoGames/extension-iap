@@ -2,9 +2,9 @@ package extension.iap.ios;
 
 import cpp.Lib;
 import extension.iap.IAP;
-import openfl.errors.Error;
-import openfl.events.Event;
-import openfl.events.EventDispatcher;
+import flash.errors.Error;
+import flash.events.Event;
+import flash.events.EventDispatcher;
 import haxe.Json;
 
 /**

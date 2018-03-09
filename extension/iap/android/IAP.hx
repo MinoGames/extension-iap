@@ -1,13 +1,13 @@
 package extension.iap.android;
 
 import extension.iap.IAP;
-import openfl.errors.Error;
-import openfl.events.Event;
-import openfl.events.EventDispatcher;
-import openfl.Lib;
+import flash.errors.Error;
+import flash.events.Event;
+import flash.events.EventDispatcher;
+import flash.Lib;
 import haxe.Json;
 
-import openfl.utils.JNI;
+import flash.utils.JNI;
 
 /**
  * Provides convenience methods and properties for in-app purchases (Android & iOS).

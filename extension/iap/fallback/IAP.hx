@@ -1,10 +1,10 @@
 package extension.iap.fallback;
 
 import extension.iap.IAP;
-import openfl.errors.Error;
-import openfl.events.Event;
-import openfl.events.EventDispatcher;
-import openfl.Lib;
+import flash.errors.Error;
+import flash.events.Event;
+import flash.events.EventDispatcher;
+import flash.Lib;
 import haxe.Json;
 
 /**

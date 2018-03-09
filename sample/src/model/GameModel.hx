@@ -4,7 +4,7 @@ import extension.iap.IAPEvent;
 import flash.display.BitmapData;
 import com.emibap.core.ScreenUtils;
 import haxe.xml.Fast;
-import openfl.Assets;
+import flash.Assets;
 import ui.Store;
 
 typedef ElementDefinition = {
