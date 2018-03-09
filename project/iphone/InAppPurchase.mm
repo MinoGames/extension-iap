@@ -347,6 +347,17 @@ extern "C"
     {
 		return [inAppPurchase canMakePurchases];
 	}
+
+    const char* getReceipt()
+    {
+		NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
+        NSData *receipt = [NSData dataWithContentsOfURL:receiptURL];
+
+        if(!receipt)
+            return "";
+        else
+            return [[receipt base64EncodedStringWithOptions:0] UTF8String];
+	}
     
 	void purchaseProduct(const char *inProductID)
     {

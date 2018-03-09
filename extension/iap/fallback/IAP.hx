@@ -163,6 +163,12 @@ import haxe.Json;
 
 	}
 
+    public static function get_receipt ():String {
+    
+        return '';
+    
+    }
+
 	private static function set_manualTransactionMode (val:Bool):Bool {
 
 		return val;

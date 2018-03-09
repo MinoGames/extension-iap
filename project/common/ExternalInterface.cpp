@@ -85,6 +85,13 @@ static value iap_canbuy()
 DEFINE_PRIM (iap_canbuy, 0);
 
 
+static value iap_getreceipt() 
+{
+	return alloc_string(getReceipt());
+}
+DEFINE_PRIM (iap_getreceipt, 0);
+
+
 static value iap_get_manualtransactionmode() 
 {
 	return alloc_bool(getManualTransactionMode());

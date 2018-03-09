@@ -179,6 +179,10 @@ import flash.utils.JNI;
 
 	}
 
+    public static function get_receipt ():String {
+        return '';
+    }
+
 	private static function set_manualTransactionMode (val:Bool):Bool {
 
 		return false;

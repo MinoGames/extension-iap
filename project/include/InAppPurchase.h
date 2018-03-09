@@ -29,6 +29,7 @@ namespace iap
 		#else
 		void initInAppPurchase();
 		#endif
+		const char* getReceipt();
 		void purchaseProduct(const char* productID);
 		void releaseInAppPurchase();
 		void requestProductData(const char *productID);
