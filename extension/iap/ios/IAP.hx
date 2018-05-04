@@ -233,8 +233,8 @@ import haxe.Json;
 				dispatchEvent (new IAPEvent (IAPEvent.PURCHASE_INIT, data));
 
 			case "success":
-
 				var evt:IAPEvent = new IAPEvent (IAPEvent.PURCHASE_SUCCESS);
+				var localizedPrice = Reflect.field (inEvent, "localizedPrice");
 				evt.purchase = new Purchase(inEvent);
 				evt.productID = evt.purchase.productID;
 				inventory.purchaseMap.set(evt.purchase.productID, evt.purchase);
@@ -277,7 +277,7 @@ import haxe.Json;
 				dispatchEvent (e);
 
 			case "productData":
-				var prod:IAProduct = { productID: Reflect.field (inEvent, "productID"), localizedTitle: Reflect.field (inEvent, "localizedTitle"), localizedDescription: Reflect.field (inEvent, "localizedDescription"), localizedPrice: Reflect.field (inEvent, "localizedPrice"), priceAmountMicros: Reflect.field (inEvent, "priceAmountMicros"), price: Reflect.field(inEvent, "priceAmountMicros")/1000/1000, priceCurrencyCode: Reflect.field (inEvent, "priceCurrencyCode")};
+				var prod:IAProduct = { productID: Reflect.field (inEvent, "productID"), localizedTitle: Reflect.field (inEvent, "localizedTitle"), localizedDescription: Reflect.field (inEvent, "localizedDescription"), localizedPrice: Reflect.field (inEvent, "localizedPrice"), priceAmountMicros: Reflect.field (inEvent, "priceAmountMicros"), price: Reflect.field(inEvent, "priceAmountMicros")/1000/1000, priceCurrencyCode: Reflect.field (inEvent, "priceCurrencyCode"), priceCountryCode: Reflect.field (inEvent, "priceCountryCode")};
 				trace('iOS Product: ' + prod);
 				tempProductsData.push( prod );
 				inventory.productDetailsMap.set(prod.productID, new ProductDetails(prod));
