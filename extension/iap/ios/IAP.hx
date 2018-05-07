@@ -233,8 +233,8 @@ import haxe.Json;
 				dispatchEvent (new IAPEvent (IAPEvent.PURCHASE_INIT, data));
 
 			case "success":
+
 				var evt:IAPEvent = new IAPEvent (IAPEvent.PURCHASE_SUCCESS);
-				var localizedPrice = Reflect.field (inEvent, "localizedPrice");
 				evt.purchase = new Purchase(inEvent);
 				evt.productID = evt.purchase.productID;
 				inventory.purchaseMap.set(evt.purchase.productID, evt.purchase);
