@@ -8,7 +8,7 @@
 extern "C" void sendPurchaseEvent(const char* type, const char* data);
 extern "C" void sendPurchaseFinishEvent(const char* type, const char* productID, const char* transactionID, double transactionDate, const char* receipt);
 extern "C" void sendPurchaseDownloadEvent(const char* type, const char* productID, const char* transactionID, const char* downloadPath, const char* downloadVersion, const char* downloadProgress);
-extern "C" void sendPurchaseProductDataEvent(const char* type, const char* productID, const char* localizedTitle, const char* localizedDescription, int priceAmountMicros, const char* localizedPrice, const char* priceCurrencyCode);
+extern "C" void sendPurchaseProductDataEvent(const char* type, const char* productID, const char* localizedTitle, const char* localizedDescription, int priceAmountMicros, const char* localizedPrice, const char* priceCurrencyCode, const char* priceCountryCode);
 
 
 @interface InAppPurchase: NSObject <SKProductsRequestDelegate, SKPaymentTransactionObserver>
@@ -144,10 +144,11 @@ extern "C" void sendPurchaseProductDataEvent(const char* type, const char* produ
 				[numberFormatter release];
 				
 				NSString *priceCurrencyCode = [prod.priceLocale objectForKey:NSLocaleCurrencyCode];
+				NSString *priceCountryCode = [prod.priceLocale objectForKey:NSLocaleCountryCode];
 
 				int priceAmountMicros = [[prod.price decimalNumberByMultiplyingBy:[NSDecimalNumber decimalNumberWithString:@"1000000"]] intValue];			
 
-				sendPurchaseProductDataEvent("productData", [prod.productIdentifier UTF8String], [prod.localizedTitle UTF8String], [prod.localizedDescription UTF8String], priceAmountMicros, [formattedPrice UTF8String], [priceCurrencyCode UTF8String]);
+				sendPurchaseProductDataEvent("productData", [prod.productIdentifier UTF8String], [prod.localizedTitle UTF8String], [prod.localizedDescription UTF8String], priceAmountMicros, [formattedPrice UTF8String], [priceCurrencyCode UTF8String], [priceCountryCode UTF8String]);
 
 			}
 			
