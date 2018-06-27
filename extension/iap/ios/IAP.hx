@@ -224,8 +224,6 @@ import haxe.Json;
 		var type = Std.string (Reflect.field (inEvent, "type"));
 		var data = Std.string (Reflect.field (inEvent, "data"));
 
-		trace('--------------------------- iap event: ' + type);
-
 		switch (type) {
 
 			case "started":
@@ -278,7 +276,6 @@ import haxe.Json;
 
 			case "productData":
 				var prod:IAProduct = { productID: Reflect.field (inEvent, "productID"), localizedTitle: Reflect.field (inEvent, "localizedTitle"), localizedDescription: Reflect.field (inEvent, "localizedDescription"), localizedPrice: Reflect.field (inEvent, "localizedPrice"), priceAmountMicros: Reflect.field (inEvent, "priceAmountMicros"), price: Reflect.field(inEvent, "priceAmountMicros")/1000/1000, priceCurrencyCode: Reflect.field (inEvent, "priceCurrencyCode"), priceCountryCode: Reflect.field (inEvent, "priceCountryCode")};
-				trace('iOS Product: ' + prod);
 				tempProductsData.push( prod );
 				inventory.productDetailsMap.set(prod.productID, new ProductDetails(prod));
 
