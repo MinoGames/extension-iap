@@ -32,12 +32,16 @@ public class InAppPurchase extends Extension {
 	private static IabHelper inAppPurchaseHelper;
 	private static String publicKey = "";
 
-	public static void buy (final String productID, final String devPayload) {
+	public static void buy (final String productID, final String devPayload, final boolean subscription) {
 		// IabHelper.launchPurchaseFlow() must be called from the main activity's UI thread
 		Extension.mainActivity.runOnUiThread(new Runnable() {
 				public void run() {
 					try {
-						InAppPurchase.inAppPurchaseHelper.launchPurchaseFlow (Extension.mainActivity, productID, 1001, mPurchaseFinishedListener, devPayload);
+                        if (subscription) {
+                            InAppPurchase.inAppPurchaseHelper.launchSubscriptionPurchaseFlow (Extension.mainActivity, productID, 1001, mPurchaseFinishedListener, devPayload);
+                        } else {
+						    InAppPurchase.inAppPurchaseHelper.launchPurchaseFlow (Extension.mainActivity, productID, 1001, mPurchaseFinishedListener, devPayload);
+                        }
 					} catch (Exception exception) {
 						// see: https://github.com/openfl/extension-iap/issues/28
 						Log.e("IAP", "Failed to launch purchase flow.", exception);

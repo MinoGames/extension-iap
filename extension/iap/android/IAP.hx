@@ -96,14 +96,14 @@ import flash.utils.JNI;
 	 * 		PURCHASE_CANCEL: Fired when the purchase attempt was cancelled by the user
 	 */
 
-	public static function purchase (productID:String, devPayload:String = ""):Void {
+	public static function purchase (productID:String, devPayload:String = "", subscription:Bool = false):Void {
 
 		if (funcBuy == null) {
-			funcBuy = JNI.createStaticMethod ("org/haxe/extension/iap/InAppPurchase", "buy", "(Ljava/lang/String;Ljava/lang/String;)V");
+			funcBuy = JNI.createStaticMethod ("org/haxe/extension/iap/InAppPurchase", "buy", "(Ljava/lang/String;Ljava/lang/String;Z)V");
 		}
 
 		IAPHandler.lastPurchaseRequest = productID;
-		funcBuy (productID, devPayload);
+		funcBuy (productID, devPayload, subscription);
 	}
 
 
@@ -294,7 +294,9 @@ private class IAPHandler {
 	///////////////////////////////////////////////////////////////////////////////////////////
 
 	public function onPurchase (response:String, itemType:String, signature:String):Void {
-		var evt:IAPEvent = new IAPEvent (IAPEvent.PURCHASE_SUCCESS);
+		trace('ON PURCHASE ANDROID');
+        
+        var evt:IAPEvent = new IAPEvent (IAPEvent.PURCHASE_SUCCESS);
 
 		evt.purchase = new Purchase(response, itemType, signature);
 		evt.productID = evt.purchase.productID;

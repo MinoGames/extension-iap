@@ -73,7 +73,7 @@ private enum EventType {
 	 * 		PURCHASE_FAILURE: Fired when the purchase attempt failed
 	 * 		PURCHASE_CANCEL: Fired when the purchase attempt was cancelled by the user
 	 */
-	public static function purchase (productID:String, devPayload:String = "") : Void {
+	public static function purchase (productID:String, devPayload:String = "", subscription:Bool = false) : Void {
 
 		waitingEvent = Purchase;
 		purchases_buy(productID);
