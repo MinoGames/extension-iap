@@ -78,7 +78,9 @@ public class InAppPurchase extends Extension {
 						}
 					});
 
-				} // catch
+				} catch (Exception e) {
+					Log.d("IAP", e.getMessage());
+				}
 			} // run
 		});
 
@@ -105,50 +107,54 @@ public class InAppPurchase extends Extension {
 	
 	
 	public static void initialize (String publicKey, HaxeObject callback) {
-		
-		Log.i ("IAP", "Initializing billing service");
-		
-		InAppPurchase.publicKey = publicKey;
-		InAppPurchase.callback = callback;
-		
-		if (InAppPurchase.inAppPurchaseHelper != null) {
+		try {
+			Log.i ("IAP", "Initializing billing service");
 			
-			InAppPurchase.inAppPurchaseHelper.dispose ();
+			InAppPurchase.publicKey = publicKey;
+			InAppPurchase.callback = callback;
 			
-		}
-		
-		InAppPurchase.inAppPurchaseHelper = new IabHelper (Extension.mainContext, publicKey);
-		InAppPurchase.inAppPurchaseHelper.startSetup (new IabHelper.OnIabSetupFinishedListener () {
-			
-			public void onIabSetupFinished (final IabResult result) {
+			if (InAppPurchase.inAppPurchaseHelper != null) {
 				
-				if (result.isSuccess ()) {
-					
-					Extension.callbackHandler.post (new Runnable () {
-						
-						@Override public void run () {
-							
-							InAppPurchase.callback.call ("onStarted", new Object[] { "Success" });
-							
-						}
-						
-					});
-					
-				} else {
-					Extension.callbackHandler.post (new Runnable () {
-						
-						@Override public void run () {
-							
-							InAppPurchase.callback.call ("onStarted", new Object[] { "Failure" });
-							
-						}
-						
-					});
-				}
+				InAppPurchase.inAppPurchaseHelper.dispose ();
 				
 			}
 			
-		});
+			InAppPurchase.inAppPurchaseHelper = new IabHelper (Extension.mainContext, publicKey);
+			InAppPurchase.inAppPurchaseHelper.startSetup (new IabHelper.OnIabSetupFinishedListener () {
+				
+				public void onIabSetupFinished (final IabResult result) {
+					
+					if (result.isSuccess ()) {
+						
+						Extension.callbackHandler.post (new Runnable () {
+							
+							@Override public void run () {
+								
+								InAppPurchase.callback.call ("onStarted", new Object[] { "Success" });
+								
+							}
+							
+						});
+						
+					} else {
+						Extension.callbackHandler.post (new Runnable () {
+							
+							@Override public void run () {
+								
+								InAppPurchase.callback.call ("onStarted", new Object[] { "Failure" });
+								
+							}
+							
+						});
+					}
+					
+				}
+				
+			});
+
+		} catch(Exception e) {
+			Log.d("IAP", e.getMessage());
+		}
 		
 	}
 	
