@@ -7,7 +7,7 @@ import flash.events.EventDispatcher;
 import flash.Lib;
 import haxe.Json;
 
-import flash.utils.JNI;
+import lime.system.JNI;
 
 /**
  * Provides convenience methods and properties for in-app purchases (Android & iOS).
