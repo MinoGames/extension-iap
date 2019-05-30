@@ -35,6 +35,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.NullPointerException;
 
 
 /**
@@ -246,11 +247,24 @@ public class IabHelper {
                     }
 
                     mSetupDone = true;
-                }
-                catch (RemoteException e) {
+                } catch (RemoteException e) {
                     if (listener != null) {
                         listener.onIabSetupFinished(new IabResult(IABHELPER_REMOTE_EXCEPTION,
                                                     "RemoteException while setting up in-app billing."));
+                    }
+                    e.printStackTrace();
+                    return;
+                } catch (NullPointerException e) {
+                    if (listener != null) {
+                        listener.onIabSetupFinished(new IabResult(IABHELPER_REMOTE_EXCEPTION,
+                                                    "NullPointerException while setting up in-app billing."));
+                    }
+                    e.printStackTrace();
+                    return;
+                } catch(Exception e) {
+                    if (listener != null) {
+                        listener.onIabSetupFinished(new IabResult(IABHELPER_REMOTE_EXCEPTION,
+                                                    "Exception while setting up in-app billing."));
                     }
                     e.printStackTrace();
                     return;
