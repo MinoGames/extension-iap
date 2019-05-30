@@ -1,8 +1,8 @@
 package states;
 import com.emibap.ui.UIUtils;
 import extension.iap.IAP;
-import flash.display.Sprite;
-import flash.events.Event;
+import openfl.display.Sprite;
+import openfl.events.Event;
 import model.GameModel;
 import model.GameUserData;
 

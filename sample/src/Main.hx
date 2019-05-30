@@ -3,19 +3,19 @@ package ;
 import com.emibap.core.ScreenUtils;
 import com.emibap.ui.MessageBox;
 import com.emibap.ui.UIUtils;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.Lib;
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.MouseEvent;
+import openfl.Lib;
 import model.GameModel;
 import model.GameUserData;
-import flash.Assets;
+import openfl.Assets;
 import states.GameState;
 import states.State;
 import states.TitleState;
 import ui.Store;
 
-import flash.text.TextField;
+import openfl.text.TextField;
 
 import extension.iap.IAP;
 import extension.iap.IAPEvent;

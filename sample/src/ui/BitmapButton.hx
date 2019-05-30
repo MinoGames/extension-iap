@@ -1,9 +1,9 @@
 package ui;
 
-import flash.display.Sprite;
-import flash.display.BitmapData;
-import flash.display.Bitmap; 
-import flash.events.MouseEvent;
+import openfl.display.Sprite;
+import openfl.display.BitmapData;
+import openfl.display.Bitmap; 
+import openfl.events.MouseEvent;
  
 class BitmapButton extends Sprite {
 	

@@ -1,9 +1,9 @@
 package com.emibap.ui;
 import com.emibap.core.ScreenUtils;
-import flash.display.Sprite;
-import flash.events.MouseEvent;
-import flash.text.TextField;
-import flash.text.TextFormat;
+import openfl.display.Sprite;
+import openfl.events.MouseEvent;
+import openfl.text.TextField;
+import openfl.text.TextFormat;
 
 class UIUtils
 {

@@ -1,12 +1,12 @@
 package com.emibap.core;
-import flash.display.Stage;
-import flash.display.Sprite;
-import flash.geom.Matrix;
-import flash.system.Capabilities;
-import flash.text.TextField;
-import flash.text.TextFormat;
-import flash.Assets;
-import flash.display.BitmapData;
+import openfl.display.Stage;
+import openfl.display.Sprite;
+import openfl.geom.Matrix;
+import openfl.system.Capabilities;
+import openfl.text.TextField;
+import openfl.text.TextFormat;
+import openfl.Assets;
+import openfl.display.BitmapData;
 
 class ScreenUtils
 {

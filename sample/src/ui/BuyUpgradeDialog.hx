@@ -2,14 +2,14 @@ package ui;
 import com.emibap.core.ScreenUtils;
 import com.emibap.ui.MessageBox;
 import com.emibap.ui.UIUtils;
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.text.TextField;
-import flash.text.TextFormat;
-import flash.text.TextFormatAlign;
+import openfl.display.Bitmap;
+import openfl.display.BitmapData;
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.MouseEvent;
+import openfl.text.TextField;
+import openfl.text.TextFormat;
+import openfl.text.TextFormatAlign;
 import model.GameModel;
 
 class BuyUpgradeDialog extends Sprite
