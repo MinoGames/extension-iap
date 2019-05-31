@@ -1,10 +1,10 @@
 package com.emibap.ui;
 import com.emibap.core.ScreenUtils;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.EventDispatcher;
-import flash.events.MouseEvent;
-import flash.text.TextField;
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.EventDispatcher;
+import openfl.events.MouseEvent;
+import openfl.text.TextField;
 
 class MessageBox
 {

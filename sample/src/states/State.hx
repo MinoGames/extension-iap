@@ -1,9 +1,9 @@
 package states;
 
-import flash.display.DisplayObject;
-import flash.display.MovieClip;
-import flash.display.Sprite;
-import flash.display.BitmapData;
+import openfl.display.DisplayObject;
+import openfl.display.MovieClip;
+import openfl.display.Sprite;
+import openfl.display.BitmapData;
 import com.emibap.core.ScreenUtils;
 
 class State extends Sprite 

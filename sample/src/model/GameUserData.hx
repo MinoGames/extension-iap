@@ -1,10 +1,10 @@
 package model;
-import flash.events.Event;
-import flash.events.EventDispatcher;
-import flash.net.SharedObject;
-import flash.net.SharedObjectFlushStatus;
+import openfl.events.Event;
+import openfl.events.EventDispatcher;
+import openfl.net.SharedObject;
+import openfl.net.SharedObjectFlushStatus;
 
-import flash.errors.Error;
+import openfl.errors.Error;
 
 class GameUserData extends EventDispatcher
 {

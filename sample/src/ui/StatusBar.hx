@@ -1,10 +1,10 @@
 package ui;
 import com.emibap.core.ScreenUtils;
 import com.emibap.ui.UIUtils;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.text.TextField;
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.MouseEvent;
+import openfl.text.TextField;
 import model.GameModel;
 import model.GameUserData;
 import ui.BitmapButton;

@@ -1,10 +1,10 @@
 package model;
 import extension.iap.IAP;
 import extension.iap.IAPEvent;
-import flash.display.BitmapData;
+import openfl.display.BitmapData;
 import com.emibap.core.ScreenUtils;
 import haxe.xml.Fast;
-import flash.Assets;
+import openfl.Assets;
 import ui.Store;
 
 typedef ElementDefinition = {

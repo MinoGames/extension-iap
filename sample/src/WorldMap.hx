@@ -1,16 +1,16 @@
 package ;
 
 import com.emibap.core.ScreenUtils;
-import flash.display.Bitmap;
-import flash.display.BitmapData;
-import flash.display.Sprite;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.Lib;
+import openfl.display.Bitmap;
+import openfl.display.BitmapData;
+import openfl.display.Sprite;
+import openfl.events.Event;
+import openfl.events.MouseEvent;
+import openfl.Lib;
 import model.GameModel;
 import model.GameUserData;
 
-import flash.text.TextField;
+import openfl.text.TextField;
 
 import extension.iap.IAP;
 import extension.iap.IAPEvent;
