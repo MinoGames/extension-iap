@@ -47,8 +47,9 @@ import lime.system.JNI;
  * You may want to check the IAPEvent, Purchase and ProductDetails classes to explore further.
  *
  */
-
-@:allow(extension.iap) class IAP {
+@:keep
+@:allow(extension.iap) 
+class IAP {
 
 	public static var available (get, null):Bool;
 	public static var manualTransactionMode (get, set):Bool;
@@ -228,7 +229,7 @@ import lime.system.JNI;
 
 #if (android && !display)
 
-
+@:keep
 private class IAPHandler {
 
 	public static var lastPurchaseRequest:String = "";
