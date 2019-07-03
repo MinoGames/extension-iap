@@ -90,6 +90,12 @@ import haxe.Json;
 
 	}
 
+	public static function checkQueue ():Void {
+
+		purchases_queue();
+	
+	}
+
 	/**
 	 * Sends a purchase intent for a given product.
 	 *
@@ -354,6 +360,7 @@ import haxe.Json;
 	// Native Methods
 
 	private static var purchases_initialize = Lib.load ("iap", "iap_initialize", 0);
+	private static var purchases_queue = Lib.load ("iap", "iap_queue", 0);
 	private static var purchases_restore = Lib.load ("iap", "iap_restore", 0);
 	private static var purchases_buy = Lib.load ("iap", "iap_buy", 1);
 	private static var purchases_get_data = Lib.load ("iap", "iap_get_data", 1);

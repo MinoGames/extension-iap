@@ -47,6 +47,13 @@ DEFINE_PRIM (iap_initialize, 0);
 
 #endif
 
+static value iap_queue() 
+{
+	checkQueue();
+	return alloc_null();
+}
+DEFINE_PRIM (iap_queue, 0);
+
 static value iap_restore() 
 {
 	restorePurchases();

@@ -42,6 +42,11 @@ extern "C" void sendPurchaseProductDataEvent(const char* type, const char* produ
 	sendPurchaseEvent("started", "");
 }
 
+- (void)checkQueue
+{
+	[self paymentQueue:[SKPaymentQueue defaultQueue] updatedTransactions:[[SKPaymentQueue defaultQueue] transactions]];
+}
+
 - (void)restorePurchases 
 {
 	NSLog(@"starting restore");
@@ -339,6 +344,12 @@ extern "C"
 		[inAppPurchase initInAppPurchase];
 	}
 	
+	void checkQueue()
+    {
+    	printf("init inapppurchase --------------------------------------------------- xx\n");
+		[inAppPurchase checkQueue];
+	}
+
 	void restorePurchases() 
 	{
 		[inAppPurchase restorePurchases];
