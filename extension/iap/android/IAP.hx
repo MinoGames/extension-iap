@@ -76,7 +76,7 @@ class IAP {
 	public static function initialize (publicKey:String = ""):Void {
 
 		if (funcInit == null) {
-			funcInit = JNI.createStaticMethod ("org/haxe/extension/iap/InAppPurchase", "initialize", "(Ljava/lang/String;Lorg/haxe/lime/HaxeObject;)V");
+			funcInit = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org/haxe/extension/iap/InAppPurchase", "initialize", "(Ljava/lang/String;Lorg/haxe/lime/HaxeObject;)V");
 		}
 
 		if (inventory == null) inventory = new Inventory(null);
@@ -100,7 +100,7 @@ class IAP {
 	public static function purchase (productID:String, devPayload:String = "", subscription:Bool = false):Void {
 
 		if (funcBuy == null) {
-			funcBuy = JNI.createStaticMethod ("org/haxe/extension/iap/InAppPurchase", "buy", "(Ljava/lang/String;Ljava/lang/String;Z)V");
+			funcBuy = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org/haxe/extension/iap/InAppPurchase", "buy", "(Ljava/lang/String;Ljava/lang/String;Z)V");
 		}
 
 		IAPHandler.lastPurchaseRequest = productID;
@@ -134,7 +134,7 @@ class IAP {
 	public static function consume (purchase:Purchase):Void {
 
 		if (funcConsume == null) {
-			funcConsume = JNI.createStaticMethod ("org/haxe/extension/iap/InAppPurchase", "consume", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
+			funcConsume = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org/haxe/extension/iap/InAppPurchase", "consume", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V");
 		}
 		IAPHandler.lastPurchaseRequest = purchase.productID;
 		funcConsume (purchase.originalJson, purchase.itemType, purchase.signature);
@@ -159,7 +159,7 @@ class IAP {
 	public static function queryInventory (queryItemDetails:Bool = false, moreItems:Array<String> = null):Void {
 
 		if (funcQueryInventory == null) {
-			funcQueryInventory = JNI.createStaticMethod ("org/haxe/extension/iap/InAppPurchase", "queryInventory", "(Z[Ljava/lang/String;)V");
+			funcQueryInventory = com.minogames.utils.PlatformUtils.createStaticMethodSafe ("org/haxe/extension/iap/InAppPurchase", "queryInventory", "(Z[Ljava/lang/String;)V");
 		}
 		funcQueryInventory (queryItemDetails, moreItems);
 
